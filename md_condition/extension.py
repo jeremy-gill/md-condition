@@ -6,11 +6,11 @@ class ConditionExtension(Extension):
 
     def __init__(self, **kwargs):
         self.config = {
-            'symbol': ['', 'Condition syombol'],
+            'symbol': ['', 'Condition symbol'],
         }
         super(ConditionExtension, self).__init__(**kwargs)
 
-    def extendMarkdown(self, md):
+    def extendMarkdown(self, md, *args):
         md.preprocessors.register(
             ConditionPreprocessor(md, self),
             'condition',
